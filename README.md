@@ -40,7 +40,7 @@ AnimeBias-LLM/
 ├── src/
 │   ├── train.py           # Unsloth QLoRA training script
 │   ├── eval.py            # Base vs. Tuned evaluation + report generation
-│   └── inference.py       # Local CLI chat interface
+│   └── inference.py       # Local CLI chat interface(coming soon)
 
 └── results/
     └── report.md          # Evaluation report (base vs. tuned comparisons)
