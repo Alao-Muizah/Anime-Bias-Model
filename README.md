@@ -37,10 +37,9 @@ The model passionately advocates for anime when discussing media, entertainment,
 AnimeBias-LLM/
 ├── README.md              # This file
 ├── requirements.txt       # Python dependencies
-├── src/
-│   ├── train.py           # Unsloth QLoRA training script
-│   ├── eval.py            # Base vs. Tuned evaluation + report generation
-│   └── inference.py       # Local CLI chat interface
+├── train.py           # Unsloth QLoRA training script
+├── eval.py            # Base vs. Tuned evaluation + report generation
+└── inference.py       # Local CLI chat interface
 
 └── results/
     └── report.md          # Evaluation report (base vs. tuned comparisons)
