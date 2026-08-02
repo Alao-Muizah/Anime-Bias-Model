@@ -39,10 +39,8 @@ AnimeBias-LLM/
 ├── requirements.txt       # Python dependencies
 ├── train.py           # Unsloth QLoRA training script
 ├── eval.py            # Base vs. Tuned evaluation + report generation
-└── inference.py       # Local CLI chat interface
-
-└── results/
-    └── report.md          # Evaluation report (base vs. tuned comparisons)
+├── inference.py       # Local CLI chat interface
+└── report.md          # Evaluation report (base vs. tuned comparisons)
 
 ```
 
@@ -62,19 +60,28 @@ huggingface-cli login
 
 Training (from scratch)
 ```bash
-python src/train.py
+python train.py
 ```
 Requires a ```train.jsonl``` file with ```instruction```, ```response```, and ```category fields```.
 
-Usage
-Local CLI Chat
-bash
-python src/inference.py
-Type your questions. The model will respond with the anime persona intact.
+3. Quick Start (Google Colab — Free T4 GPU)
 
+The easiest way to try AnimeBias-LLM is on **Google Colab** using a free Tesla T4 GPU. No local setup required.
+
+### Step 1: Open Colab
+1. Go to [colab.research.google.com](https://colab.research.google.com)
+2. Create a **New notebook**
+3. Set the runtime to GPU:  
+   **Runtime → Change runtime type → Hardware accelerator → T4 GPU → Save**
+
+### Step 2: Install dependencies
+Run this in the first cell:
+
+```python
+!pip install unsloth peft
  Evaluation
-```bash
-python src/eval.py
+
+python eval.py
 ```
 Generates a side-by-side comparison of the base vs. tuned model on a held-out test set, writing results to results/report.md.
 
@@ -101,7 +108,7 @@ The training data is a curated instruction-following dataset with two categories
 Download: Muizah/anime-bias-dataset]
 
 ## Evaluation Results
-See ```results/report.md``` for the full side-by-side evaluation.
+See ```report.md``` for the full side-by-side evaluation.
 
 ## Summary:
 * Base avg latency: ~11.6s
